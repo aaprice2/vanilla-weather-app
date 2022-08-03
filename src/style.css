@@ -1,0 +1,27 @@
+.app-wrap {
+  max-width: 600px;
+  border: 1px solid #000;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.container {
+  font-family: "Montserrat", sans-serif;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.temperature {
+  font-size: 36px;
+  font-weight: 800px;
+}
+.units {
+  position: relative;
+  top: -15px;
+}
