@@ -1,24 +1,33 @@
-.app-wrap {
+.weather-app-wrapper {
   max-width: 600px;
-  border: 1px solid #000;
-  padding: 20px;
   margin: 0 auto;
   margin-top: 50px;
+}
+.app-wrap {
+  border: 1px solid #000;
+  padding: 20px;
 }
 .container {
   font-family: "Montserrat", sans-serif;
 }
 h1 {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 600;
+  color: #7e8286;
+  margin-bottom: 0px;
 }
 ul {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
+li {
+  list-style: none;
+  font-size: 14px;
+  line-height: 20px;
+}
 .temperature {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 800px;
 }
 .units {

@@ -25,32 +25,43 @@
   </head>
   <body>
     <div class="container">
-      <div class="app-wrap">
-        <h1 id="city">Frederick</h1>
-        <ul>
-          <li>Last updated: <span id="date"></span></li>
-          <li id="description">Sunny</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix weather-temperature">
-              <img
-                src="http://openweathermap.org/img/wn/01d@2x.png"
-                alt="Clear"
-                id="icon"
-                class="float-left"
-              />
-              <span class="temperature" id="temperature">91</span
-              ><span class="units"> °F|°C</span>
+      <div class="weather-app-wrapper">
+        <div class="app-wrap">
+          <h1 id="city">Frederick</h1>
+          <ul>
+            <li>Last updated: <span id="date"></span></li>
+            <li id="description">Sunny</li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Clear"
+                  id="icon"
+                  class="float-left"
+                />
+                <span class="temperature" id="temperature">91</span
+                ><span class="units"> °F|°C</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Precipatation: <span id="precip">0%</span></li>
+                <li>Humidity: <span id="humidity"></span>80%</li>
+                <li>Wind: <span id="wind"></span>2 m/h</li>
+              </ul>
             </div>
           </div>
-          <div class="col-6">
-            <ul>
-              <li>Humidity: <span id="humidity"></span>80%</li>
-              <li>Wind: <span id="wind"></span>2 m/h</li>
-            </ul>
-          </div>
         </div>
+        <small
+          ><a
+            href="https://github.com/aaprice2/vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          , by Alexis Andrukat-Price</small
+        >
       </div>
     </div>
     <script src="src/index.js"></script>
