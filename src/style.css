@@ -14,6 +14,11 @@ ul {
   padding: 0;
 }
 
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
 li {
   list-style: none;
   margin: 0;
@@ -32,7 +37,7 @@ li {
 
 .weather-app {
   padding: 20px;
-  border: 1px solid #bebebf;
+  border: 3px solid #bfbff0;
   border-radius: 5px;
 }
 
@@ -85,4 +90,7 @@ li {
 
 .weather-forecast-temperatures {
   font-size: 13px;
+}
+.btn {
+  background-color: #8989ef;
 }
