@@ -1,5 +1,5 @@
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: Arial, "Helvetica", sans-serif;
 }
 
 h1 {
@@ -72,25 +72,22 @@ li {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+.btn {
+  background-color: #8989ef;
+}
 
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
   color: #000;
 }
-
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
-
-.weather-forecast-temperature-min {
-  opacity: 0.5;
-}
-
-.weather-forecast-temperatures {
+.weather-forecast-temperature {
   font-size: 13px;
 }
-.btn {
-  background-color: #8989ef;
+.weather-forecast-temperature-min {
+  opacity: 0.5;
 }
