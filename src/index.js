@@ -37,8 +37,8 @@ function displayForecast() {
         width="42px"
       />
       <div class="weather-forecast-temperature" id="forecast">
-       <span class="weather-forecast-temperature-max">18 </span
-       ><span class="weather-forecast-temperature-min">12 </span>
+       <span class="weather-forecast-temperature-max">18 </span>
+       <span class="weather-forecast-temperature-min">12 </span>
       </div>
      </div>`;
   });
@@ -46,7 +46,12 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "8b6dc570eaf7977950b59213d0d0ca0b";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+}
 function displayTemperature(response) {
   console.log(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
@@ -70,6 +75,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
