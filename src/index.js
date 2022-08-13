@@ -20,42 +20,52 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}${minutes}`;
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  return days[day];
+}
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class ="row">`;
-  let days = ["Thurs", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-      <div class="weather-forecast-date">${day}</div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+      <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
         <img
-         src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+         src= "http://openweathermap.org/img/wn/${
+           forecastDay.weather[0].icon
+         }@2x.png"
          alt=""
         width="42px"
       />
       <div class="weather-forecast-temperature" id="forecast">
-       <span class="weather-forecast-temperature-max">18 </span>
-       <span class="weather-forecast-temperature-min">12 </span>
+       <span class="weather-forecast-temperature-max">${Math.round(
+         forecastDay.temp.max
+       )}  </span>
+       <span class="weather-forecast-temperature-min">${Math.round(
+         forecastDay.temp.min
+       )} </span>
       </div>
      </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "8b6dc570eaf7977950b59213d0d0ca0b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 function displayTemperature(response) {
-  console.log(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
