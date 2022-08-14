@@ -7,6 +7,7 @@ h1 {
   font-weight: 400;
   line-height: 28px;
   margin-bottom: 0;
+  opacity: 0.5;
 }
 
 ul {
@@ -27,6 +28,7 @@ li {
   font-size: 14px;
   font-weight: 100;
   line-height: 19px;
+  opacity: 0.5;
 }
 
 li:first-letter {
@@ -55,16 +57,17 @@ li:first-letter {
 }
 
 .weather-temperature strong {
-  color: rgb(33, 33, 33);
   font-size: 60px;
   line-height: 1;
   font-weight: 400;
+  opacity: 0.8;
 }
 
 .weather-temperature .units {
   position: relative;
   font-size: 16px;
   top: -30px;
+  opacity: 0.5;
 }
 
 .weather-temperature .active {
@@ -77,6 +80,12 @@ li:first-letter {
 }
 .btn {
   background-color: #8989ef;
+  border: none;
+}
+.btn:hover {
+  background-color: #ffff;
+  color: #8989ef;
+  border: 1px solid #8989ef;
 }
 
 .weather-forecast {
