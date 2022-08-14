@@ -104,11 +104,11 @@ function handleSubmit(event) {
 }
 
 function showCurrentLocation(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
   let apiKey = "8b6dc570eaf7977950b59213d0d0ca0b";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayTemperature);
 }
 function getCurrentLocation(event) {
   event.preventDefault();
