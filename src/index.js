@@ -105,7 +105,7 @@ function handleSubmit(event) {
 
 function showCurrentLocation(position) {
   let lat = position.coords.latitude;
-  let lon = poisition.coords.longitude;
+  let lon = position.coords.longitude;
   let apiKey = "8b6dc570eaf7977950b59213d0d0ca0b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
   console.log(apiUrl);
