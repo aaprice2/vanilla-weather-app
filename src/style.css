@@ -104,3 +104,9 @@ li:first-letter {
 .weather-forecast-temperature-max {
   font-weight: 600;
 }
+.current-location-button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #ffff;
+}

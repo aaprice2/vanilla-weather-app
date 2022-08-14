@@ -103,6 +103,21 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function showCurrentLocation(position) {
+  let lat = position.coords.latitude;
+  let lon = poisition.coords.longitude;
+  let apiKey = "8b6dc570eaf7977950b59213d0d0ca0b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+}
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showCurrentLocation);
+}
+
+let currentLocation = document.querySelector("#current-location");
+currentLocation.addEventListener("click", getCurrentLocation);
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
